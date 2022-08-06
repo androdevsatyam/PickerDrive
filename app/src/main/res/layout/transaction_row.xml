@@ -16,10 +16,10 @@
         <ImageView
             android:id="@+id/icon1"
             android:layout_width="60dp"
-            android:layout_height="wrap_content"
-            android:maxHeight="60dp"
+            android:layout_height="match_parent"
             android:layout_alignTop="@id/company"
-            android:layout_alignBottom="@+id/to"
+            android:layout_alignBottom="@+id/mobile"
+            android:maxHeight="60dp"
             android:padding="3dp"
             android:src="@drawable/car" />
 
@@ -64,7 +64,6 @@
             android:textSize="17sp"
             app:drawableStartCompat="@drawable/destination" />
 
-
         <TextView
             android:id="@+id/date"
             style="@style/TextAppearance.AppCompat.Display3"
@@ -72,10 +71,10 @@
             android:layout_height="wrap_content"
             android:layout_alignTop="@+id/from"
             android:layout_alignBottom="@+id/from"
-            android:layout_toEndOf="@+id/to"
             android:layout_marginStart="@dimen/dp20"
+            android:layout_toEndOf="@+id/to"
             android:maxLines="1"
-            android:text="@string/to"
+            android:text="@string/date"
             android:textSize="17sp"
             app:drawableStartCompat="@drawable/icdate" />
 

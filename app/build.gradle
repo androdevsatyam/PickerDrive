@@ -10,8 +10,8 @@ android {
 //        minSdk 20
 //        targetSdk 30
 
-        versionCode 2
-        versionName "1.1"
+        versionCode 3
+        versionName "1.2"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         targetSdkVersion 30
@@ -20,6 +20,12 @@ android {
 
     dataBinding{
         enabled true
+    }
+    lintOptions {
+        checkReleaseBuilds false
+        // Or, if you prefer, you can continue to check for errors in release builds,
+        // but continue the build even when errors are found:
+        abortOnError false
     }
 
     buildTypes {

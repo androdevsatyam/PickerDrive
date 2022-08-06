@@ -11,8 +11,6 @@ import android.view.View;
 
 import com.hpweb.pickerdrive.databinding.ActivityFormCompanyCarCarrierBinding;
 
-import java.util.Calendar;
-
 public class FormCompanyCarCarrier extends AppCompatActivity {
 
     ActivityFormCompanyCarCarrierBinding bindin;
@@ -31,11 +29,22 @@ public class FormCompanyCarCarrier extends AppCompatActivity {
     }
 
     public void showDate(View bindview) {
-        DatePickerDialog datePickerDialog = Helper.getDatePickerDialog(this);
-        datePickerDialog.setOnDateSetListener((view1, year, month, dayOfMonth) -> {
-            bindin.date.setText(dayOfMonth + "/" + month + "/" + year);
-        });
+        DatePickerDialog.OnDateSetListener listener= (datePicker, year, month, dayOfMonth) -> {
+            month=month+1;
+            String m= String.valueOf(month),d= String.valueOf(dayOfMonth);
+            if(month < 10){
+                m = "0" + month;
+            }
+            if(dayOfMonth < 10){
+                d  = "0" + dayOfMonth;
+            }
+            bindin.date.setText(year + "-" + m + "-" + d);
+        };
 
+        DatePickerDialog datePickerDialog = Helper.getDatePickerDialog(this, listener);
+       /* datePickerDialog.setOnDateSetListener((view1, year, month, dayOfMonth) -> {
+            bindin.date.setText(dayOfMonth + "/" + month + "/" + year);
+        });*/
         datePickerDialog.show();
     }
 

@@ -37,7 +37,7 @@ public class Helper {
         return adap;
     }
 
-    public static void setDate(TextView date, int dayOfMonth, int month, int year){
+    public static void setDate(TextView date, String dayOfMonth, String month, int year){
         date.setText(year+"-"+month+"-"+dayOfMonth);
     }
 
@@ -63,9 +63,9 @@ public class Helper {
         Toast.makeText(context, msg, Lenght).show();
     }
 
-    public static DatePickerDialog getDatePickerDialog(Context context) {
+    public static DatePickerDialog getDatePickerDialog(Context context, DatePickerDialog.OnDateSetListener listener) {
         Calendar calendar = Calendar.getInstance();
-        DatePickerDialog datePickerDialog = new DatePickerDialog(context, R.style.MyTimePickerDialogTheme, null, calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH), calendar.get(Calendar.DAY_OF_MONTH));
+        DatePickerDialog datePickerDialog = new DatePickerDialog(context, R.style.MyTimePickerDialogTheme, listener, calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH), calendar.get(Calendar.DAY_OF_MONTH));
         datePickerDialog.getDatePicker().setMinDate(calendar.getTimeInMillis());
         return datePickerDialog;
     }

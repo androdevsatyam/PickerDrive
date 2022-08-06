@@ -114,10 +114,21 @@ public class FormPackerVehicle extends AppCompatActivity {
     }
 
     public void showDate(View bindview) {
-        DatePickerDialog datePickerDialog = Helper.getDatePickerDialog(FormPackerVehicle.this);
-        datePickerDialog.setOnDateSetListener((view1, year, month, dayOfMonth) -> {
+        DatePickerDialog.OnDateSetListener listener= (datePicker, year, month, dayOfMonth) -> {
+            month=month+1;
+            String m= String.valueOf(month),d= String.valueOf(dayOfMonth);
+            if(month < 10){
+                m = "0" + month;
+            }
+            if(dayOfMonth < 10){
+                d  = "0" + dayOfMonth;
+            }
+            Helper.setDate(vehicleBinding.date,d,m,year);
+        };
+        DatePickerDialog datePickerDialog = Helper.getDatePickerDialog(FormPackerVehicle.this, listener);
+       /* datePickerDialog.setOnDateSetListener((view1, year, month, dayOfMonth) -> {
            Helper.setDate(vehicleBinding.date,dayOfMonth,month,year);
-        });
+        });*/
 
         datePickerDialog.show();
     }

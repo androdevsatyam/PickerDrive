@@ -104,15 +104,32 @@ public class FormCustVehicle extends AppCompatActivity {
     }
 
     public void showDate(View bindview) {
-        DatePickerDialog datePickerDialog = Helper.getDatePickerDialog(FormCustVehicle.this);
-        datePickerDialog.setOnDateSetListener((view1, year, month, dayOfMonth) -> {
+        DatePickerDialog.OnDateSetListener listener= (datePicker, year, month, dayOfMonth) -> {
+            month=month+1;
+            String m= String.valueOf(month),d= String.valueOf(dayOfMonth);
+            if(month < 10){
+                m = "0" + month;
+            }
+            if(dayOfMonth < 10){
+                d  = "0" + dayOfMonth;
+            }
+            if (bindview.getId() == binding.date.getId())
+                Helper.setDate(binding.date,d,m,year);
+//                binding.date.setText(dayOfMonth + "/" + month + "/" + year);
+            else
+                Helper.setDate(binding.loading,d,m,year);
+//            binding.loading.setText(dayOfMonth + "/" + month + "/" + year);
+        };
+
+        DatePickerDialog datePickerDialog = Helper.getDatePickerDialog(FormCustVehicle.this, listener);
+       /* datePickerDialog.setOnDateSetListener((view1, year, month, dayOfMonth) -> {
             if (bindview.getId() == binding.date.getId())
                 Helper.setDate(binding.date,dayOfMonth,month,year);
 //                binding.date.setText(dayOfMonth + "/" + month + "/" + year);
             else
                 Helper.setDate(binding.loading,dayOfMonth,month,year);
 //            binding.loading.setText(dayOfMonth + "/" + month + "/" + year);
-        });
+        });*/
 
         datePickerDialog.show();
     }

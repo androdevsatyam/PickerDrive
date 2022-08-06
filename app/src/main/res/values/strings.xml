@@ -22,7 +22,7 @@
     <string name="payment">"Payable "</string>
     <string name="required_field"> * Required</string>
     <string name="company">Company Name</string>
-    <string name="date">03/04/2022</string>
+    <string name="date">3/04/2022</string>
     <string name="joinus">Join Us</string>
     <string name="address">Address</string>
     <string name="weight_cap">Vehicle Weight Capacity (KG)</string>

@@ -1,9 +1,11 @@
 package com.hpweb.pickerdrive;
 
 import android.app.DatePickerDialog;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.DatePicker;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,6 +17,7 @@ import com.hpweb.pickerdrive.databinding.ActivityTransactionBinding;
 import com.model.TransactionModel;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 import retrofit.RetrofitError;
 
@@ -25,6 +28,7 @@ public class Transaction extends AppCompatActivity {
     ArrayList<TransactionModel> data;
     boolean show=true;
     String id;
+    DatePickerDialog.OnDateSetListener listener;
 
     String[] title = new String[]{
             "PACKERS VEHICLE Requirement",
@@ -86,6 +90,18 @@ public class Transaction extends AppCompatActivity {
 
         binding.city.setAdapter(Helper.getCities(Transaction.this));
         binding.date.setText(Helper.getDate());
+
+        listener= (datePicker, year, month, dayOfMonth) -> {
+            month=month+1;
+            String m= String.valueOf(month),d= String.valueOf(dayOfMonth);
+            if(month < 10){
+                m = "0" + month;
+            }
+            if(dayOfMonth < 10){
+                d  = "0" + dayOfMonth;
+            }
+            binding.date.setText(year + "-" + m + "-"+d);
+        };
     }
 
 //    private void setLocalData() {
@@ -101,13 +117,21 @@ public class Transaction extends AppCompatActivity {
 
 
     public void showDate(View bindview) {
-        DatePickerDialog datePickerDialog = Helper.getDatePickerDialog(Transaction.this);
-        datePickerDialog.setOnDateSetListener((view1, year, month, dayOfMonth) -> {
-            month=month+1;
-            binding.date.setText(year + "-" + month + "-"+dayOfMonth);
-        });
-
+        DatePickerDialog datePickerDialog = Helper.getDatePickerDialog(Transaction.this,listener);
         datePickerDialog.show();
+//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+//            datePickerDialog.setOnDateSetListener(listener);
+//        }
+        /*  datePickerDialog.setOnDateSetListener((view1, year, month, dayOfMonth) -> {
+            month=month+1;
+            if(month < 10){
+                month = Integer.valueOf(String.valueOf("0" + month));
+            }
+            if(dayOfMonth < 10){
+                dayOfMonth  = Integer.valueOf(String.valueOf("0" + dayOfMonth)) ;
+            }
+            binding.date.setText(year + "-" + month + "-"+dayOfMonth);
+        });*/
     }
 
 
@@ -129,6 +153,8 @@ public class Transaction extends AppCompatActivity {
                                 binding.list.setVisibility(View.GONE);
                             } else {
                                 show = true;
+                                binding.date.setEnabled(false);
+                                binding.city.setEnabled(false);
                                 TransactionAdapter adapter = new TransactionAdapter(Transaction.this, transactionModel.getData());
                                 binding.list.setAdapter(adapter);
                                 binding.list.setVisibility(View.VISIBLE);
@@ -161,6 +187,8 @@ public class Transaction extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         if(show || binding.emptylayout.getVisibility()==View.VISIBLE) {
+            binding.date.setEnabled(true);
+            binding.city.setEnabled(true);
             MainAdapter adapter = new MainAdapter(this, title, icon);
             binding.list.setAdapter(adapter);
             show=false;
