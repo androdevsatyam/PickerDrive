@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.hpweb.pickerdrive">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/logistic_picker"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/logistic_picker_round"
+        android:supportsRtl="true"
+        android:largeHeap="true"
+        android:usesCleartextTraffic="true"
+        android:theme="@style/Theme.NoMyApplication">
+        <activity
+            android:name=".DashBoard"
+            android:exported="false" />
+        <activity
+            android:name=".About"
+            android:exported="false" />
+        <activity
+            android:name=".Register"
+            android:exported="false" />
+        <activity
+            android:name=".FormCompanyCarCarrier"
+            android:exported="false" />
+        <activity
+            android:name=".FormPackerVehicle"
+            android:exported="false" />
+        <activity
+            android:name=".FormCompanyLoad"
+            android:exported="false" />
+        <activity
+            android:name=".FormTransportVehicle"
+            android:exported="false" />
+        <activity
+            android:name=".FormTransportLoad"
+            android:exported="false" />
+        <activity
+            android:name=".FormDriverLoad"
+            android:exported="false" />
+        <activity
+            android:name=".FormPackerCarCarrier"
+            android:exported="false" />
+        <activity
+            android:name=".FormCustVehicle"
+            android:exported="false" />
+        <activity
+            android:name=".FormStorage"
+            android:exported="false" />
+        <activity
+            android:name=".FormLabour"
+            android:exported="false" />
+        <activity
+            android:name=".Face"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Transaction"
+            android:exported="false" />
+        <activity
+            android:name=".Form"
+            android:exported="false" />
+        <activity
+            android:name=".Login"
+            android:exported="false" />
+<!--        <activity-->
+<!--            android:name=".MainActivity"-->
+<!--            android:exported="false"-->
+<!--            android:theme="@style/MainactionBar">-->
+            <!--
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            -->
+<!--        </activity>-->
+    </application>
+
+</manifest>

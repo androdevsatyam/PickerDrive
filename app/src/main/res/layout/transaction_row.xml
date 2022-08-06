@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp"
+    android:elevation="7dp"
+    android:padding="3dp"
+    app:cardCornerRadius="7dp">
+
+    <RelativeLayout
+        android:id="@+id/row"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/icon1"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:maxHeight="60dp"
+            android:layout_alignTop="@id/company"
+            android:layout_alignBottom="@+id/to"
+            android:padding="3dp"
+            android:src="@drawable/car" />
+
+        <TextView
+            android:id="@+id/company"
+            style="@style/TextAppearance.MaterialComponents.Headline6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginStart="5dp"
+            android:layout_toEndOf="@+id/icon1"
+            android:maxLength="27"
+            android:maxLines="1"
+            android:paddingLeft="@dimen/dp5"
+            android:text="@string/company" />
+
+        <TextView
+            android:id="@+id/from"
+            style="@style/TextAppearance.AppCompat.Display3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/company"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="@dimen/dp10"
+            android:layout_toEndOf="@+id/icon1"
+            android:maxLines="1"
+            android:text="@string/from"
+            android:textSize="17sp"
+            app:drawableStartCompat="@drawable/source" />
+
+        <TextView
+            android:id="@+id/to"
+            style="@style/TextAppearance.AppCompat.Display3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/from"
+            android:layout_alignBottom="@+id/from"
+            android:layout_toEndOf="@+id/from"
+            android:layout_marginStart="@dimen/dp20"
+            android:maxLines="1"
+            android:text="@string/to"
+            android:textSize="17sp"
+            app:drawableStartCompat="@drawable/destination" />
+
+
+        <TextView
+            android:id="@+id/date"
+            style="@style/TextAppearance.AppCompat.Display3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/from"
+            android:layout_alignBottom="@+id/from"
+            android:layout_toEndOf="@+id/to"
+            android:layout_marginStart="@dimen/dp20"
+            android:maxLines="1"
+            android:text="@string/to"
+            android:textSize="17sp"
+            app:drawableStartCompat="@drawable/icdate" />
+
+        <TextView
+            android:id="@+id/mobile"
+            style="@style/TextAppearance.AppCompat.Display3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/from"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="@dimen/dp5"
+            android:layout_toEndOf="@+id/icon1"
+            android:maxLines="1"
+            android:text="@string/mobile"
+            android:textSize="17sp"
+            app:drawableStartCompat="@drawable/ic_phone" />
+
+        <TextView
+            android:id="@+id/address"
+            style="@style/TextAppearance.AppCompat.Display3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/mobile"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="@dimen/dp5"
+            android:layout_toEndOf="@+id/icon1"
+            android:maxLines="1"
+            android:text="@string/address"
+            android:textSize="17sp"
+            app:drawableStartCompat="@drawable/ic_address" />
+
+        <ImageView
+            android:id="@+id/delete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:padding="3dp"
+            android:src="@android:drawable/ic_menu_delete"
+            android:visibility="gone" />
+
+    </RelativeLayout>
+
+
+</androidx.cardview.widget.CardView>

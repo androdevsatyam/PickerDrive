@@ -1,0 +1,51 @@
+<resources>
+    <string name="app_name">Logistic Shortout</string>
+
+    <string name="user_id">User Id (Email-Id )</string>
+    <string name="login">Login</string>
+    <string name="password">Password</string>
+    <string name="driver">Driver</string>
+    <string name="packer">Packer</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="name">Name</string>
+    <string name="mobile">Mobile</string>
+    <string name="vehicle">Vehicle No</string>
+    <string name="type">Vehicle Type (feet)</string>
+    <string name="from">From</string>
+    <string name="to">To</string>
+    <string name="requirement">Requirement</string>
+    <string name="submit">Submit</string>
+    <string name="part_load">Part Load</string>
+    <string name="full_load">Full Load</string>
+    <string name="vehicle_size">VEHICLE TYPE( FEET)</string>
+    <string name="payment">"Payable "</string>
+    <string name="required_field"> * Required</string>
+    <string name="company">Company Name</string>
+    <string name="date">03/04/2022</string>
+    <string name="joinus">Join Us</string>
+    <string name="address">Address</string>
+    <string name="weight_cap">Vehicle Weight Capacity (KG)</string>
+    <string name="load_type">Load Type</string>
+    <string name="household">House Hold</string>
+    <string name="commercial">Commercial</string>
+    <string name="carname">Car Name</string>
+    <string name="weight">Weight</string>
+    <string name="material_detail">Material Detail</string>
+    <string name="loading_date">Loading Date</string>
+    <string name="city">City</string>
+    <string name="storage">Storage Time</string>
+    <string name="vehicle_no">Vehicle No</string>
+    <string name="email">Email (User Id)</string>
+    <string name="register">Register</string>
+    <string name="about_us">About Us</string>
+    <string name="about"> <b>Aggarwal Pack Cargo Private Limited</b> is a Private incorporated on 30 September 2014. It is classified as Non-govt company and is registered at Registrar of Companies, Chandigarh. Its authorized share capital is Rs. 100,000 and its paid up capital is Rs. 100,000. It is inolved in Business activities n.e.c. Aggarwal Pack Cargo Private Limited\'s Annual General Meeting (AGM) was last held on N/A and as per records from Ministry of Corporate Affairs (MCA), its balance sheet was last filed on N/A. Directors of Aggarwal Pack Cargo Private Limited are Virender Singh and Pardeep Kumar. Aggarwal Pack Cargo Private Limited\'s Corporate Identification Number is (CIN) U74950CH2014PTC035242 and its registration number is 35242.Its Email address is indianaggarwal@gmail.com and its registered address is H NO 2241/12, MARIWALA TOWN MANI MAJRA CHANDIGARH Chandigarh CH 160101 IN.</string>
+    <string name="supportemail">logisticshortout@gmail.com</string>
+    <string name="supportcall">8699999006</string>
+    <string name="signup">SignUp</string>
+    <string name="repassword">Re-enter Password</string>
+    <string name="welcome">Welcome To Logistic Shortout</string>
+    <string name="lefticon">lefticon</string>
+    <string name="labourreq_detail">Labour Requirement</string>
+    <string name="labourrava">Labour Available</string>
+</resources>

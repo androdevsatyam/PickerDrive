@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".About">
+
+    <TextView
+        android:id="@+id/about"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/about_us"
+        android:paddingStart="@dimen/dp10"
+        android:visibility="gone"
+        style="@style/TextAppearance.MaterialComponents.Headline5"
+        android:layout_marginTop="@dimen/dp10"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/dp5"
+        android:paddingBottom="@dimen/dp20"
+        app:layout_constraintTop_toBottomOf="@id/about"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:src="@drawable/about"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp10"
+                android:justificationMode="inter_word"
+                android:padding="@dimen/dp5"
+                android:text="@string/about"
+                android:textSize="17sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp10"
+                android:gravity="center_horizontal">
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/support_email"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:src="@drawable/ic_email"
+                    app:backgroundTint="@color/red"
+                    app:elevation="0.0dip"
+                    app:fabSize="mini"
+                    app:rippleColor="@android:color/white"
+                    app:tint="@android:color/white" />
+
+                <View
+                    android:layout_width="@dimen/dp10"
+                    android:layout_height="0.0dip" />
+
+                <View
+                    android:layout_width="@dimen/dp10"
+                    android:layout_height="0.0dip" />
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/support_call"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:src="@drawable/ic_call"
+                    app:backgroundTint="@color/green"
+                    app:elevation="0.0dip"
+                    app:fabSize="mini"
+                    app:rippleColor="@android:color/white"
+                    app:tint="@color/white" />
+
+                <View
+                    android:layout_width="@dimen/dp10"
+                    android:layout_height="0.0dip" />
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/support_address"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:src="@drawable/destination"
+                    app:backgroundTint="@color/blue"
+                    app:elevation="0.0dip"
+                    app:fabSize="mini"
+                    app:rippleColor="@android:color/white"
+                    app:tint="@color/white" />
+
+                <View
+                    android:layout_width="@dimen/dp10"
+                    android:layout_height="0.0dip" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
